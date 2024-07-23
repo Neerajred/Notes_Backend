@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 
 const db = new sqlite3.Database('notes-project.db');
 
+// create a table if it is not exist
 db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS notes (
